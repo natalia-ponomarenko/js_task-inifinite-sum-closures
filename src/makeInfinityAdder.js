@@ -9,7 +9,7 @@ function makeInfinityAdder(a = 0) {
   return function(b) {
     const result = a + b;
 
-    return result >= 0 ? makeInfinityAdder(result) : a;
+    return !isNaN(result) ? makeInfinityAdder(result) : a;
   };
 }
 
